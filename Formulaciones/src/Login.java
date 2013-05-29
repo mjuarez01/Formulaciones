@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -29,7 +32,7 @@ public class Login extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jpswdClave = new javax.swing.JPasswordField();
-        jtxtUsuario = new javax.swing.JTextField();
+        jlblUsuario = new javax.swing.JTextField();
         jbtnAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,13 +49,18 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jtxtUsuario.addActionListener(new java.awt.event.ActionListener() {
+        jlblUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtxtUsuarioActionPerformed(evt);
+                jlblUsuarioActionPerformed(evt);
             }
         });
 
         jbtnAceptar.setText("ACEPTAR");
+        jbtnAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbtnAceptarMouseClicked(evt);
+            }
+        });
         jbtnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtnAceptarActionPerformed(evt);
@@ -77,7 +85,7 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jbtnAceptar)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jtxtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                .addComponent(jlblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                 .addComponent(jpswdClave)))))
                 .addContainerGap(124, Short.MAX_VALUE))
         );
@@ -89,7 +97,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jtxtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlblUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -106,13 +114,27 @@ public class Login extends javax.swing.JFrame {
        // TODO add your handling code here:
     }//GEN-LAST:event_jpswdClaveActionPerformed
 
-    private void jtxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtUsuarioActionPerformed
+    private void jlblUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlblUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtxtUsuarioActionPerformed
+    }//GEN-LAST:event_jlblUsuarioActionPerformed
 
     private void jbtnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAceptarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnAceptarActionPerformed
+
+    private void jbtnAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnAceptarMouseClicked
+        String usuario = "miguel";
+        String password = "810929";
+        
+        String pass = new String(jpswdClave.getPassword());
+        if(jlblUsuario.getText().equals(usuario) && pass.equals(password)) {
+            MenuPrincipal mostrarMenu = new MenuPrincipal();
+            mostrarMenu.setVisible(true);
+            Login.this.dispose();
+        }
+        else
+            JOptionPane.showMessageDialog(this, "Usuario/Contraseña incorrectos");
+    }//GEN-LAST:event_jbtnAceptarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -153,7 +175,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton jbtnAceptar;
+    private javax.swing.JTextField jlblUsuario;
     private javax.swing.JPasswordField jpswdClave;
-    private javax.swing.JTextField jtxtUsuario;
     // End of variables declaration//GEN-END:variables
 }
