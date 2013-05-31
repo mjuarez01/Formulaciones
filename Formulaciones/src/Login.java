@@ -55,7 +55,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jbtnAceptar.setText("ACEPTAR");
+        jbtnAceptar.setText("ENTRAR");
         jbtnAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbtnAceptarMouseClicked(evt);
@@ -82,12 +82,14 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2))
                         .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbtnAceptar)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jlblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                .addComponent(jpswdClave)))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jlblUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                            .addComponent(jpswdClave))))
                 .addContainerGap(124, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jbtnAceptar)
+                .addGap(141, 141, 141))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,9 +104,9 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jpswdClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(39, 39, 39)
                 .addComponent(jbtnAceptar)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         pack();
@@ -123,7 +125,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtnAceptarActionPerformed
 
     private void jbtnAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbtnAceptarMouseClicked
-        String usuario = "miguel";
+        String usuario;
+        usuario = "miguel";
         String password = "810929";
         
         String pass = new String(jpswdClave.getPassword());

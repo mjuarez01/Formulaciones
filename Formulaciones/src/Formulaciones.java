@@ -10,7 +10,7 @@ public class Formulaciones {
      */
     public static void main(String[] args) {
         Login mostrarVentana = new Login();
-        mostrarVentana.setLocationRelativeTo(null);
+        mostrarVentana.setLocationRelativeTo(null); // Centra la ventana en la pantalla
         mostrarVentana.setVisible(true);
         
                 
